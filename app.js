@@ -32,7 +32,7 @@ app.get("/products/:id", (req, res) => {
 app.get("/users", (req, res) => {
   const { age } = req.query;
   if (age) {
-    const user = users.find((u) => u.age == age);
+    const user = users.find((u) => u.age > age);
     if (!user) {
       res.status(404).send("<h1>User not found</h1>");
     } else {
